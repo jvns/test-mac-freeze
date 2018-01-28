@@ -1,0 +1,8 @@
+[package]
+name = "test-mac-freeze"
+version = "0.1.0"
+authors = ["Julia Evans <julia@stripe.com>"]
+
+[dependencies]
+mach = "0.1.2"
+libc = "0.2.36"
