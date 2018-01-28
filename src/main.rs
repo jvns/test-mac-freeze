@@ -18,8 +18,9 @@ pub fn main() {
 pub fn task_for_pid(pid: pid_t) -> io::Result<mach_port_name_t> {
     let mut task: mach_port_name_t = MACH_PORT_NULL;
     unsafe {
-        let result =
-            mach::traps::task_for_pid(mach_task_self(), pid as c_int, &mut task);
+        println!("Running task_for_pid...");
+        let result = mach::traps::task_for_pid(mach_task_self(), pid as c_int, &mut task);
+        println!("Done running task_for_pid...");
         if result != KERN_SUCCESS {
             return Err(io::Error::last_os_error());
         }
